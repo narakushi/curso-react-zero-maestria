@@ -1,0 +1,21 @@
+.car_details {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f8b3f5;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid #7c0061;
+}
+
+.car_details h2 {
+  color: #7c0061;
+  font-size: 20px;
+}
+
+.car_details p {
+  color: #ff006a;
+  line-height: 1.5;
+}

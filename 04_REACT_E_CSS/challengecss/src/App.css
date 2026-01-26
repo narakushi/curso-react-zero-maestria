@@ -1,0 +1,15 @@
+.container_cars {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cars_exibition {
+  margin-top: 20px;
+}
+
+.cars_exibition h2 {
+  margin-bottom: 20px;
+}
