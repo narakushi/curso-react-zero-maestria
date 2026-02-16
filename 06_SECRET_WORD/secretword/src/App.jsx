@@ -34,10 +34,6 @@ function App() {
   const [guesses, setGuesses] = useState(3);
   const [score, setScore] = useState(0);
 
-  //* fazendo com minha lógica para testar como resolveria
-
-  const [typedLetter, setTypedLetter] = useState("");
-
   const pickWordAndCategory = () => {
     //pick a random category
 
@@ -79,19 +75,9 @@ function App() {
 
   // process the letter input
 
-  const verifyLetter = (e) => {
+  const verifyLetter = (letter) => {
     // setGameStage(stages[2].name);
-
-    e.preventDefault();
-
-    if (letters.includes(typedLetter)) {
-      setGuessedLetters((prevGuessedLetter) => [typedLetter, ...prevGuessedLetter]);
-    }
-    else {
-      setWrongLetters((prevWrongLetter) => [typedLetter, ...prevWrongLetter])
-    }
-
-    setTypedLetter("");
+    console.log(letter)
   };
 
   // restarts the game
@@ -112,9 +98,7 @@ function App() {
           wrongLetters={wrongLetters}
           guesses={guesses}
           score={score}
-          typedLetter={typedLetter}
 
-          setTypedLetter={setTypedLetter}
         />
       )}
       {gameStage === "end" && <GameOver retry={retry} />}
