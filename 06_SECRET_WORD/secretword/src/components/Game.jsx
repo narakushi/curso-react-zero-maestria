@@ -45,7 +45,6 @@ const Game = ({
             <span key={i} className="blankSquare"></span>
           ),
         )}
-        <span className="blankSquare"></span>
       </div>
 
       <div className="letterContainer">
