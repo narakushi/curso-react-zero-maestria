@@ -36,7 +36,7 @@ function App() {
   const [guesses, setGuesses] = useState(guessesQty);
   const [score, setScore] = useState(0);
 
-  const pickWordAndCategory = () => {
+  const pickWordAndCategory = useCallback(() => {
     //pick a random category
 
     const categories = Object.keys(words); //* torna-se uma lista com todas as categorias
@@ -49,23 +49,27 @@ function App() {
     const word =
       words[category][Math.floor(Math.random() * words[category].length)]; //* acessa a categoria e pega uma palavra aleatoriamente
 
-    console.log(word);
+    // console.log(word);
 
     return { word, category };
-  };
+  }, [words]);
 
   // starts the secret word game
-  const startGame = () => {
+  const startGame = useCallback(() => {
+
+    //clear all letters
+    clearLetterStates();
+
     // pick word and pick category
     const { word, category } = pickWordAndCategory();
 
     // create an array of letters
     let wordLetters = word.split("");
 
-    console.log(word, category);
+    // console.log(word, category);
 
     wordLetters = wordLetters.map((l) => l.toLowerCase());
-    console.log(wordLetters);
+    // console.log(wordLetters);
 
     // fill states
     setPickedWord(word);
@@ -73,7 +77,7 @@ function App() {
     setLetters(wordLetters);
 
     setGameStage(stages[1].name);
-  };
+  }, [pickWordAndCategory]);
 
   // process the letter input
 
@@ -119,6 +123,7 @@ function App() {
     setWrongLetters([]);
   }
 
+  // check if guesses ended
   useEffect(() => {
     if (guesses <= 0) {
       // reset all states
@@ -126,7 +131,32 @@ function App() {
 
       setGameStage(stages[2].name);
     }
-  }, [guesses])
+  }, [guesses]);
+
+  // check win condition
+  useEffect(() => {
+    //* as letras das palavras que temos no sistema
+    //* serão transformadas em letras unicas
+    //* pois uma vez digitada, caso se repita, 
+    //* a letra é atribuida uma só vez ao array de guessedLetters
+    //* Por exemplo a palavra "ovo", no array de guessedLetters
+    //* entra a letra "o", uma unica vez
+
+    const uniqueLetters = [... new Set(letters)];
+
+    // win condition
+    if (guessedLetters.length === uniqueLetters.length && gameStage === stages[1].name) {
+      // add score
+      setScore((actualScore) => actualScore = actualScore + 100);
+
+      // restart game with word
+      startGame();
+    }
+    // console.log(uniqueLetters)
+
+    console.log(score)
+
+  }, [guessedLetters, letters, startGame]);
 
   // restarts the game
   const retry = () => {
@@ -150,7 +180,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver retry={retry} />}
+      {gameStage === "end" && <GameOver retry={retry} score={score} />}
     </div>
   );
 }
