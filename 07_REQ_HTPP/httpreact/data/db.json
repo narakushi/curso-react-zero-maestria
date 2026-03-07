@@ -44,6 +44,11 @@
       "id": "2228",
       "name": "Gabinete",
       "price": "120"
+    },
+    {
+      "id": "71a8",
+      "name": "algo",
+      "price": "100"
     }
   ]
 }
