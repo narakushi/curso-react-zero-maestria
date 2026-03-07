@@ -29,6 +29,21 @@
       "id": "75c1",
       "name": "titulo",
       "price": "11"
+    },
+    {
+      "id": "0781",
+      "name": "Teclado",
+      "price": "110"
+    },
+    {
+      "id": "55f7",
+      "name": "Teclado",
+      "price": "110"
+    },
+    {
+      "id": "2228",
+      "name": "Gabinete",
+      "price": "120"
     }
   ]
 }
