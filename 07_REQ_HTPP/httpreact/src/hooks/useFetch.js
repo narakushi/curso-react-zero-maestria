@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react';
 
+
 // 4 - custom hook
 
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
+
+  // 5 - refatorando o post
+
+  const [config, setConfig] = useState(null);
+  const [method, setMethod] = useState(null);
+  const [callFetch, setCallFetch] = useState(false);
 
   useEffect(() => {
 
@@ -17,7 +24,17 @@ export const useFetch = (url) => {
 
     fetchData();
 
-  }, [url]);
+  }, [url, callFetch]);
+
+
+  // 5 - refatorando o post
+  useEffect(() => {
+    if (method === "POST") {
+      let fetchOptions = [url, config];
+
+
+    }
+  }, [config])
 
   return { data };
 }
