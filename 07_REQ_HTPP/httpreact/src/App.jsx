@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import "./App.css";
 
 // 4 - custom hook
@@ -12,7 +12,7 @@ function App() {
 
   // 4 - custom hook
 
-  const { data: items } = useFetch(url);
+  const { data: items, httpConfig } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -41,23 +41,27 @@ function App() {
       price,
     };
 
-    //* IDENTIFICAMOS O TIPO DE REQUISIÇÃO PARA TODOS
-    //* OS VERBOS HTTP, MAS PARA GET É OPCIONAL
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    // //* IDENTIFICAMOS O TIPO DE REQUISIÇÃO PARA TODOS
+    // //* OS VERBOS HTTP, MAS PARA GET É OPCIONAL
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(product),
+    // });
 
     // 3 - carregamento dinâmico
 
-    const addedProduct = await res.json();
+    // const addedProduct = await res.json();
 
-    setProducts((prevProducts) => [...prevProducts, addedProduct]);
+    // setProducts((prevProducts) => [...prevProducts, addedProduct]);
 
-    console.log(addedProduct);
+    // console.log(addedProduct);
+
+    // 5 - refatorando o post
+
+    httpConfig(product, "POST");
 
     setName("");
     setPrice("");
