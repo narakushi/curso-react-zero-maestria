@@ -57,6 +57,8 @@ function App() {
 
     setProducts((prevProducts) => [...prevProducts, addedProduct]);
 
+    console.log(addedProduct);
+
     setName("");
     setPrice("");
   };
@@ -67,9 +69,9 @@ function App() {
 
       <ul>
         {items &&
-          items.map((product) => (
-            <li key={product.id}>
-              {product.name} - R$: {product.price}
+          items.map((item) => (
+            <li key={item.id}>
+              {item.name} - R$: {item.price}
             </li>
           ))}
       </ul>
