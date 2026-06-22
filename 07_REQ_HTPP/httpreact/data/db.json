@@ -1,69 +1,14 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisa",
-      "price": 59.9
+      "id": "231c",
+      "name": "Notebook Dell",
+      "price": "2150"
     },
     {
-      "id": "2",
-      "name": "Calça vermelha",
-      "price": 90
-    },
-    {
-      "id": "3",
-      "name": "Boné aba reta",
-      "price": 29.9
-    },
-    {
-      "id": "e16e",
-      "name": "teste",
-      "price": "12"
-    },
-    {
-      "id": "f295",
-      "name": "Taina Santana",
-      "price": "44"
-    },
-    {
-      "id": "75c1",
-      "name": "titulo",
-      "price": "11"
-    },
-    {
-      "id": "0781",
-      "name": "Teclado",
-      "price": "110"
-    },
-    {
-      "id": "55f7",
-      "name": "Teclado",
-      "price": "110"
-    },
-    {
-      "id": "2228",
-      "name": "Gabinete",
-      "price": "120"
-    },
-    {
-      "id": "71a8",
-      "name": "algo",
-      "price": "100"
-    },
-    {
-      "id": "0125",
-      "name": "url",
-      "price": "12"
-    },
-    {
-      "id": "8bce",
-      "name": "monitor",
-      "price": "23"
-    },
-    {
-      "id": "d611",
-      "name": "menu",
-      "price": "12"
+      "id": "d426",
+      "name": "Teclado Logitech",
+      "price": "130.00"
     }
   ]
 }

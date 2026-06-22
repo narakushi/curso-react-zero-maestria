@@ -12,7 +12,7 @@ function App() {
 
   // 4 - custom hook
 
-  const { data: items, httpConfig, loading } = useFetch(url);
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
@@ -41,6 +41,11 @@ function App() {
       price,
     };
 
+    httpConfig(product, "POST");
+
+    setName("");
+    setPrice("");
+
     // //* IDENTIFICAMOS O TIPO DE REQUISIÇÃO PARA TODOS
     // //* OS VERBOS HTTP, MAS PARA GET É OPCIONAL
     // const res = await fetch(url, {
@@ -60,11 +65,14 @@ function App() {
     // console.log(addedProduct);
 
     // 5 - refatorando o post
+  };
 
-    httpConfig(product, "POST");
+  // 8 - desafio da aula
 
-    setName("");
-    setPrice("");
+  const handleDelete = async () => {
+    const delItem = items.pop();
+
+    httpConfig(delItem, "DELETE", delItem.id);
   };
 
   return (
@@ -72,7 +80,7 @@ function App() {
       <h1>Lista de produtos</h1>
       {/* 6 - loading */}
       {loading && <p>Carregando dados...</p>}
-      {!loading && (
+      {!error && (
         <ul>
           {items &&
             items.map((item) => (
@@ -105,8 +113,10 @@ function App() {
           </label>
           {/* 7 - state de loading no post */}
           {loading && <input type="submit" disabled value="Aguarde" />}
+          {error && <p>{error}</p>}
           {!loading && <input type="submit" value="Criar" />}
         </form>
+        {!loading && <button onClick={handleDelete}>Excluir</button>}
       </div>
     </div>
   );
