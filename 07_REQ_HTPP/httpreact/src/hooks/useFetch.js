@@ -26,7 +26,7 @@ export const useFetch = (url) => {
 
   // 8 - desafio da aula (add de recebimento de id)
 
-  const httpConfig = (data, method /*id*/) => {
+  const httpConfig = (data, method) => {
     if (method === "POST") {
       setConfig({
         method,
@@ -81,29 +81,28 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     const httpRequest = async () => {
-      let fetchOptions;
+      let json;
 
       if (method === "POST") {
-        fetchOptions = [url, config];
+        let fetchOptions = [url, config];
 
         const res = await fetch(...fetchOptions)
 
-        const json = await res.json();
-
-        setCallFetch(json);
+        json = await res.json();
 
       }
       if (method === "DELETE") {
-        fetchOptions = [`${url}/${idItem.id}`, config];
+        const deleteUrl = `${url}/${idItem}`;
 
-        const res = await fetch(...fetchOptions)
+        const res = await fetch(deleteUrl, config);
 
-        const json = await res.json();
-
-        setCallFetch(json);
+        json = await res.json();
 
         console.log(`item ${json.name} deletado com sucesso!`);
       }
+
+      setCallFetch(json);
+
     };
 
     httpRequest();

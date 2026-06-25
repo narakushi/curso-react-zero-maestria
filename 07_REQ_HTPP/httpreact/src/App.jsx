@@ -67,12 +67,10 @@ function App() {
     // 5 - refatorando o post
   };
 
-  // 8 - desafio da aula
+  // 8 - desafio da aula (tarefa 6)
 
-  const handleDelete = async () => {
-    const delItem = items.pop();
-
-    httpConfig(delItem, "DELETE", delItem.id);
+  const handleDelete = async (id) => {
+    httpConfig(id, "DELETE");
   };
 
   return (
@@ -86,6 +84,7 @@ function App() {
             items.map((item) => (
               <li key={item.id}>
                 {item.name} - R$: {item.price}
+                <button onClick={() => handleDelete(item.id)}>Excluir</button>
               </li>
             ))}
         </ul>
@@ -116,7 +115,6 @@ function App() {
           {error && <p>{error}</p>}
           {!loading && <input type="submit" value="Criar" />}
         </form>
-        {!loading && <button onClick={handleDelete}>Excluir</button>}
       </div>
     </div>
   );

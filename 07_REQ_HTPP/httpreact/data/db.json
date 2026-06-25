@@ -1,14 +1,9 @@
 {
   "products": [
     {
-      "id": "231c",
-      "name": "Notebook Dell",
-      "price": "2150"
-    },
-    {
-      "id": "d426",
-      "name": "Teclado Logitech",
-      "price": "130.00"
+      "id": "4934",
+      "name": "produto 3",
+      "price": "129.90"
     }
   ]
 }
