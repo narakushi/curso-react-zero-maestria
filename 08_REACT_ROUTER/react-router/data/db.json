@@ -1,0 +1,8 @@
+{
+  "produtos": [
+    { "id": "01", "name": "Mouse", "preco": "20" },
+    { "id": "02", "name": "Monitor", "preco": "120" },
+    { "id": "03", "name": "Teclado", "preco": "65" },
+    { "id": "04", "name": "Cabo HDMI", "preco": "32" }
+  ]
+}
