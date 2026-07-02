@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server --watch data/db.json",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
