@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
 import Info from "./pages/Info";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
           {/** 4-  rota dinâmica */}
           <Route path="/products/:id" element={<Product />} />
           {/** 6 - nested route */}
-          <Route path="products/:id/info" element={<Info />}></Route>
+          <Route path="products/:id/info" element={<Info />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
