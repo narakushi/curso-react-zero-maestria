@@ -1,0 +1,17 @@
+.navbar-container-child {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.navbar-container-child a {
+  color: #b6acbe;
+  text-decoration: none;
+}
+
+.active {
+  background: #000;
+  color: #fff;
+}
