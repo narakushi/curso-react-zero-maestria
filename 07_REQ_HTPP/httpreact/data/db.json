@@ -1,94 +1,9 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
-      "id": "2",
-      "name": "Calça vermelha",
-      "price": 90
-    },
-    {
-      "id": "3",
-      "name": "Boné aba reta",
-      "price": 29.9
-    },
-    {
-      "id": "e16e",
-      "name": "teste",
-      "price": "12"
-    },
-    {
-      "id": "f295",
-      "name": "Taina Santana",
-      "price": "44"
-    },
-    {
-      "id": "75c1",
-      "name": "titulo",
-      "price": "11"
-    },
-    {
-      "id": "0781",
-      "name": "Teclado",
-      "price": "110"
-    },
-    {
-      "id": "55f7",
-      "name": "Teclado",
-      "price": "110"
-    },
-    {
-      "id": "2228",
-      "name": "Gabinete",
-      "price": "120"
-    },
-    {
-      "id": "71a8",
-      "name": "algo",
-      "price": "100"
-    },
-    {
-      "id": "0125",
-      "name": "url",
-      "price": "12"
-    },
-    {
-      "id": "80bb",
-      "name": "Taina Santana",
-      "price": "10"
-    },
-    {
-      "id": "80a0",
-      "name": "gg",
-      "price": "44"
-    },
-    {
-      "id": "78bd",
-      "name": "joia",
-      "price": "23"
-    },
-    {
-      "id": "7817",
-      "name": "titulo",
-      "price": "223"
-    },
-    {
-      "id": "b238",
-      "name": "itens",
-      "price": "23"
-    },
-    {
-      "id": "5085",
-      "name": "menu",
-      "price": ""
-    },
-    {
-      "id": "a88a",
-      "name": "flauta",
-      "price": "22"
+      "id": "4934",
+      "name": "produto 3",
+      "price": "129.90"
     }
   ]
 }

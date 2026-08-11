@@ -1,0 +1,7 @@
+{
+  "products": [
+    { "id": "01", "name": "Mouse", "price": "20" },
+    { "id": "02", "name": "Monitor", "price": "120" },
+    { "id": "04", "name": "Cabo HDMI", "price": "32" }
+  ]
+}
