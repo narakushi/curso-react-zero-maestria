@@ -29,10 +29,10 @@ export const useAuthentication = () => {
   }
 
   const createUser = async (data) => {
-    checkIfIsCancelled();
+    checkIfIsCancelled(); // clean up
 
     setLoading(true);
-    setError(null)
+    setError(null);
 
     try {
 
