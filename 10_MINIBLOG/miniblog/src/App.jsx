@@ -19,6 +19,8 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import About from "./pages/About/About";
+import CreatePost from "./pages/CreatePost/CreatePost";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -48,6 +50,8 @@ function App() {
               <Route element={<About />} path="/about" />
               <Route element={<Login />} path="/login" />
               <Route element={<Register />} path="/register" />
+              <Route element={<CreatePost />} path="/posts/create" />
+              <Route element={<Dashboard />} path="/dashboard" />
             </Routes>
           </div>
           <Footer />
