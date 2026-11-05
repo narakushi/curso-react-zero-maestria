@@ -48,10 +48,22 @@ function App() {
             <Routes>
               <Route element={<Home />} path="/" />
               <Route element={<About />} path="/about" />
-              <Route element={<Login />} path="/login" />
-              <Route element={<Register />} path="/register" />
-              <Route element={<CreatePost />} path="/posts/create" />
-              <Route element={<Dashboard />} path="/dashboard" />
+              <Route
+                element={!user ? <Login /> : <Navigate to="/" />}
+                path="/login"
+              />
+              <Route
+                element={!user ? <Register /> : <Navigate to="/" />}
+                path="/register"
+              />
+              <Route
+                element={user ? <CreatePost /> : <Navigate to="/login" />}
+                path="/posts/create"
+              />
+              <Route
+                element={user ? <Dashboard /> : <Navigate to="/login" />}
+                path="/dashboard"
+              />
             </Routes>
           </div>
           <Footer />
