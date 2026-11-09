@@ -71,12 +71,38 @@ export const useAuthentication = () => {
     signOut(auth);
   }
 
+  // login - sign in
+  const login = async (data) => {
+    checkIfIsCancelled();
+
+    setLoading(true);
+    setError(false);
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+    } catch (error) {
+      let systemErrorMessage;
+      console.log(error.message)
+
+      if (error.message.includes("invalid-credential")) {
+        systemErrorMessage = "Credenciais inválidas"
+      } else {
+        systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde"
+      }
+
+      setError(systemErrorMessage);
+    }
+    setLoading(false);
+  }
+
+
+
   useEffect(() => {
     return () => setCancelled(true);
   }, [])
 
   return {
-    auth, createUser, error, loading, logout,
+    auth, createUser, error, loading, logout, login
   }
 
 }
