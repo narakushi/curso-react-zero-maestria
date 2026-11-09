@@ -1,25 +1,33 @@
 import styles from "./Login.module.css";
 import { useAuthentication } from "../../hooks/useAuthentication";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error, setError] = useState("");
 
-  const handleSubmit = async () => {
+  const { error: authError, loading } = useAuthentication();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const user = {
       email,
       password,
     };
-
-    const res = await authUser(user);
-    console.log(res);
   };
 
+  useEffect(() => {
+    console.log(authError);
+
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError]);
+
   return (
-    <div>
+    <div className={styles.login}>
       <h1>Fazer login para postar</h1>
       <p>Entre com seu usuário e faça uso do sistema</p>
       <form onSubmit={handleSubmit}>
