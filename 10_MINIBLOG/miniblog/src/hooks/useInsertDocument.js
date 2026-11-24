@@ -8,6 +8,7 @@ const initialState = {
   error: null
 }
 
+// gerencia o estado de insertReducer
 const insertReducer = (state, action) => {
   switch (action.type) {
     case "LOADING":
